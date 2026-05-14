@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SN3 CONSTRUÇÕES - Comércio de Materiais de Construção, do básico ao acabamento. Excelência em nossos produtos com qualidade e entrega rápida.">
+    <meta name="keywords" content="SN3 CONSTRUÇÕES, Materiais de Construção, Reforma, Obra, Cimento, Acabamento, Ferramentas">
+    <meta name="author" content="SN3 CONSTRUÇÕES">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SN3 CONSTRUÇÕES - Materiais de Construção de Qualidade">
+    <meta property="og:description" content="Tudo para sua obra, do básico ao acabamento, com o melhor preço e entrega da região.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <title>SN3 CONSTRUÇÕES - Materiais para sua Obra e Reforma</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Cores adaptadas para Construção Civil (Azul Profissional e Laranja de Acento) */
+            --cor-primaria: #0f172a;
+            --cor-secundaria: #334155;
+            --cor-acento: #f97316;
+            --gradiente: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            --cor-texto: #1e293b;
+            --cor-fundo-leve: #f8fafc;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto);
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--cor-primaria);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span { color: var(--cor-acento); }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--cor-acento);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--cor-primaria);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-inline: auto;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: var(--cor-acento);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--cor-primaria);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--cor-acento);
+            border-radius: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: -50px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border-bottom: 4px solid var(--cor-acento);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--cor-primaria);
+            display: block;
+        }
+
+        .cards-grid, .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card, .servico-card {
+            background: var(--cor-fundo-leve);
+            padding: 40px;
+            border-radius: 15px;
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover, .servico-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: var(--cor-acento);
+        }
+
+        .card-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+        .contato-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .info-box {
+            background: var(--cor-primaria);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo { color: white; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 10px; }
+        .footer-links a:hover { color: white; }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1001;
+            text-decoration: none;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .menu-toggle { display: flex; }
+            .contato-wrapper { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            nav ul.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <a href="#" class="logo">🏠 SN3 <span>CONSTRUÇÕES</span></a>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#servicos">Produtos</a></li>
+                    <li><a href="#faq">Dúvidas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Construa o Seu Sonho com os Melhores Materiais</h1>
+                <p>Do alicerce ao acabamento, oferecemos a maior variedade de materiais de construção, ferramentas e ferragens com entrega imediata para sua obra.</p>
+                <div class="hero-actions">
+                    <a href="#contato" class="btn">Fazer Orçamento</a>
+                    <a href="#servicos" class="btn btn-outline">Ver Produtos</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">15+</span>
+                    <p>Anos de Experiência</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2h</span>
+                    <p>Entrega Rápida</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10k+</span>
+                    <p>Itens em Estoque</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1º</span>
+                    <p>Lugar em Qualidade</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="sobre">
+            <div class="container">
+                <h2>Por que a SN3 Construções?</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🧱</div>
+                        <h3>Material Básico</h3>
+                        <p>Cimento, areia, brita, tijolos e ferragens das melhores marcas para garantir a segurança estrutural da sua construção.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">✨</div>
+                        <h3>Acabamento</h3>
+                        <p>Pisos, revestimentos, tintas e acessórios para banheiros e cozinhas que trazem beleza e sofisticação ao seu projeto.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛠️</div>
+                        <h3>Ferramentas</h3>
+                        <p>Linha completa de ferramentas manuais e elétricas para profissionais e entusiastas do "faça você mesmo".</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" style="background: #f1f5f9;">
+            <div class="container">
+                <h2>Nossas Soluções</h2>
+                <div class="servicos-grid">
+                    <div class="servico-card">
+                        <div class="card-icon">🚚</div>
+                        <h3>Entrega Programada</h3>
+                        <p>Frota própria de caminhões para entregar seu material no horário combinado, sem atrasar o cronograma da obra.</p>
+                    </div>
+                    <div class="servico-card">
+                        <div class="card-icon">📐</div>
+                        <h3>Cálculo de Materiais</h3>
+                        <p>Nossa equipe técnica ajuda você a calcular a quantidade exata de material para evitar desperdícios e gastos extras.</p>
+                    </div>
+                    <div class="servico-card">
+                        <div class="card-icon">💳</div>
+                        <h3>Condições Facilitadas</h3>
+                        <p>Parcelamento no cartão, boleto para empresas e descontos especiais para pagamentos via PIX ou dinheiro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Dúvidas Frequentes</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">Vocês entregam em prédios e apartamentos? <span>+</span></div>
+                        <div class="faq-answer">Sim, realizamos entregas em prédios comerciais e residenciais, respeitando as normas de carga e descarga de cada local.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">É possível trocar sobras de material? <span>+</span></div>
+                        <div class="faq-answer">Sim, aceitamos trocas de materiais não utilizados em embalagens lacradas em até 30 dias após a compra (exceto areia e brita a granel).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Quais marcas de cimento vocês trabalham? <span>+</span></div>
+                        <div class="faq-answer">Trabalhamos com as líderes de mercado: Votorantim, Cauê e CP II de alta resistência.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Peça seu Orçamento</h2>
+                <div class="contato-wrapper">
+                    <div class="contact-form">
+                        <form id="form-contato">
+                            <input type="text" placeholder="Seu Nome / Nome da Empresa" required>
+                            <input type="email" placeholder="E-mail para resposta" required>
+                            <input type="text" placeholder="Endereço da Obra">
+                            <textarea rows="5" placeholder="Liste aqui os materiais que você precisa..." required></textarea>
+                            <button type="submit" class="btn" style="width: 100%;">Enviar Orçamento Agora</button>
+                        </form>
+                    </div>
+                    <div class="info-box">
+                        <h3>Onde Estamos</h3>
+                        <p style="margin-bottom: 30px;">Visite nossa loja física ou entre em contato pelos canais digitais para um atendimento personalizado.</p>
+                        <div class="info-item">📍 Av. Industrial do Trabalho, 1500, Setor de Obras - SP</div>
+                        <div class="info-item">📞 (11) 5555-4433</div>
+                        <div class="info-item">✉️ vendas@sn3construcoes.com.br</div>
+                        <div class="info-item">🕒 Seg - Sáb: 07:00 às 19:00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">SN3 CONSTRUÇÕES</div>
+                    <p>Qualidade, confiança e preço justo para sua obra. Ajudando a construir lares e empresas desde 2011.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <a href="#home">Início</a>
+                    <a href="#sobre">Quem Somos</a>
+                    <a href="#servicos">Categorias</a>
+                    <a href="#contato">Orçamentos</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Institucional</h4>
+                    <a href="#termos">Políticas de Troca</a>
+                    <a href="#privacidade">Proteção de Dados</a>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid #1e293b; padding-top: 30px; font-size: 0.8rem;">
+                <p>&copy; 2026 SN3 CONSTRUÇÕES LTDA - CNPJ: 21.773.126/0001-79. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/551155554433" class="whatsapp-float" target="_blank">
+        <svg style="width:30px;height:30px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.53 2 2.06 6.47 2.06 12C2.06 13.91 2.6 15.69 3.54 17.2L2 22L6.96 20.67C8.41 21.5 10.15 22 12.04 22C17.55 22 22.03 17.53 22.03 12C22.03 6.47 17.55 2 12.04 2M12.04 3.65C16.65 3.65 20.38 7.39 20.38 12C20.38 16.61 16.65 20.35 12.04 20.35C10.35 20.35 8.78 19.85 7.46 18.97L7.15 18.76L4.2 19.55L5 16.68L4.77 16.32C3.83 14.83 3.33 13.09 3.33 11.23C3.33 7.39 7.06 3.65 12.04 3.65M9.13 7.42C8.94 7.42 8.63 7.5 8.37 7.77C8.11 8.04 7.37 8.77 7.37 10.23C7.37 11.69 8.43 13.1 8.58 13.31C8.73 13.52 10.66 16.5 13.62 17.79C14.32 18.09 14.87 18.28 15.3 18.41C16 18.64 16.65 18.61 17.13 18.54C17.67 18.46 18.79 17.86 19.03 17.2C19.27 16.54 19.27 15.98 19.19 15.86C19.12 15.75 18.94 15.68 18.67 15.54C18.41 15.41 17.13 14.77 16.89 14.69C16.65 14.6 16.48 14.56 16.3 14.83C16.13 15.1 15.64 15.68 15.5 15.86C15.35 16.04 15.2 16.06 14.94 15.93C14.67 15.8 13.83 15.52 12.83 14.63C12.06 13.94 11.54 13.09 11.39 12.83C11.24 12.57 11.38 12.43 11.51 12.3C11.63 12.18 11.78 12 11.91 11.85C12.04 11.7 12.09 11.59 12.18 11.41C12.27 11.23 12.22 11.08 12.15 10.94C12.09 10.81 11.63 9.68 11.44 9.21C11.25 8.75 11.06 8.81 10.92 8.81C10.79 8.81 10.63 8.81 10.47 8.81C10.31 8.81 10.05 8.87 9.83 9.11C9.62 9.35 9 9.94 9 11.23C9 12.52 9.94 13.77 10.07 13.94C10.2 14.11 11.91 16.74 14.53 17.87C15.15 18.14 15.63 18.3 16 18.42C16.6 18.62 17.15 18.59 17.58 18.53C18.06 18.46 19.06 17.93 19.27 17.33C19.48 16.74 19.48 16.24 19.41 16.14C19.34 16.03 19.18 15.97 18.94 15.85" /></svg>
+    </a>
+
+    <div class="cookie-banner" id="cookie-banner">
+        <p>Utilizamos cookies para oferecer a melhor experiência em sua compra. Ao navegar, você aceita nossa política.</p>
+        <div>
+            <button class="btn" style="padding: 8px 20px;" onclick="acceptCookies()">Aceitar</button>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de scroll no cabeçalho
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Menu mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle('active');
+                button.querySelector('span').textContent = answer.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // Simulação de envio de formulário
+        document.getElementById('form-contato').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Enviando Orçamento...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.textContent = 'Orçamento Enviado com Sucesso!';
+                btn.style.background = '#10b981';
+                e.target.reset();
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+
+        // Banner de Cookies
+        function acceptCookies() {
+            localStorage.setItem('cookiesAcceptedSN3', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        window.onload = () => {
+            if (!localStorage.getItem('cookiesAcceptedSN3')) {
+                document.getElementById('cookie-banner').style.display = 'flex';
+            }
+        };
+    </script>
+</body>
+</html>
